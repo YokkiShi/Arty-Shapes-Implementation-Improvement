@@ -1,0 +1,22 @@
+circle, rectangle, triangle, superellipse, robustconvexhull
+
+circMean: continuous.
+circSd: continuous.
+circSkew: continuous.
+circKurtosis: continuous.
+rectMean: continuous.
+rectSd: continuous.
+rectSkew: continuous.
+rectKurtosis: continuous.
+triMean: continuous.
+triSd: continuous.
+triSkew: continuous.
+triKurtosis: continuous.
+supMean: continuous.
+supSd: continuous.
+supSkew: continuous.
+supKurtosis: continuous.
+robustCHMean: continuous.
+robustCHSd: continuous.
+robustCHSkew: continuous.
+robustCHKurtosis: continuous.

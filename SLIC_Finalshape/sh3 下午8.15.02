@@ -1,0 +1,8 @@
+#!/bin/csh -f
+
+foreach i (*.pix)
+	echo $i
+	./se2 -m 5 -i $i -o /tmp/sup
+        ./super2pixel -i /tmp/sup -o /tmp/sup2
+	./pix_transf -i /tmp/sup2 -o {$i:r}.sup -I
+end

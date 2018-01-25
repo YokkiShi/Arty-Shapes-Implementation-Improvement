@@ -1,0 +1,9 @@
+#!/bin/csh -f
+
+foreach i (*.pix)
+	echo $i
+	convex2 $i /tmp/tmp1
+	pix_transf -i /tmp/tmp1 -o /tmp/tmp2 -x 10 -y 10
+	parallelogram /tmp/tmp2 > /tmp/tmp3
+	pix_transf -i /tmp/tmp3 -o {$i:r}.para -x -10 -y -10
+end

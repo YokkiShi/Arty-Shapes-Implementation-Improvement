@@ -1,0 +1,10 @@
+#!/bin/csh -f
+
+foreach i (*.pix)
+	echo $i
+	fit_triangle -i $i -o {$i:r}.tri -t
+
+	fit_triangle -i $i -o {$i:r}.circ -c
+
+	fit_triangle -i $i -o {$i:r}.rect -r
+end

@@ -1,0 +1,16 @@
+#!/bin/csh -f
+
+foreach i (*pix)
+	echo $i
+	./fit_triangle -i $i -o /tmp/tri -t
+	./pix_transf -i /tmp/tri -o /tmp/tri2 -I
+	./pix_transf -i /tmp/tri2 -o {$i:r}.tri -1
+
+	./fit_triangle -i $i -o /tmp/circle -c
+	./super2pixel -i /tmp/circle -o /tmp/circle2
+	./pix_transf -i /tmp/circle2 -o {$i:r}.circ -I
+
+	./fit_triangle -i $i -o /tmp/rect -r
+	./pix_transf -i /tmp/rect -o /tmp/rect2 -I
+	./pix_transf -i /tmp/rect2 -o {$i:r}.rect -1
+end

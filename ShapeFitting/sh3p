@@ -1,0 +1,9 @@
+#!/bin/csh -f
+
+# output result in pixel format
+
+foreach i (*pix)
+	echo $i
+	se2 -m 5 -i $i -o /tmp/supere
+	super2pixel -i /tmp/supere -o {$i:r}.sup
+end

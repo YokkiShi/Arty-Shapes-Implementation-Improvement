@@ -1,0 +1,10 @@
+#!/bin/csh -f
+
+# robust convex hull
+
+foreach f (*.pix)
+    echo processing $f 
+
+    pix_transf -i $f -o /tmp/sss -s 4
+    convexityCM10 /tmp/sss {$f:r}.robustCH /tmp/out2 
+end

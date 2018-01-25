@@ -1,0 +1,10 @@
+#!/bin/csh -f
+
+# convex skull
+
+foreach f (*.pix)
+    echo processing $f 
+
+    pix_transf -i $f -o /tmp/sss -s 4
+    skull3 /tmp/sss {$f:r}.skull3 > /dev/null
+end

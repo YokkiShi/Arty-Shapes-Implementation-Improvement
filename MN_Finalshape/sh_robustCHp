@@ -1,0 +1,13 @@
+#!/bin/csh -f
+
+# robust convex hull
+
+set path = (/home/scmplr/OUTSTANDING-WORK/CHRISTINE $path)
+
+foreach i (*.pix)
+    echo processing $i
+
+    ./pix_transf -i $i -o /tmp/sss -s 4
+    ./convexityCM10 /tmp/sss /tmp/out1 /tmp/out2
+    ./pix_transf -i /tmp/out1 -o {$i:r}.robustCH -1
+end

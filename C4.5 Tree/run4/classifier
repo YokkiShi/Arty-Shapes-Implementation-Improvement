@@ -1,0 +1,65 @@
+Rule 1:
+    	triKurtosis <= -0.41737
+    	supSkew > 0.083263
+    	robustCHSkew > 1.8777
+	->  class triangle  [79.4%]
+
+Rule 2:
+    	triSd <= 0.032827
+	->  class triangle  [73.1%]
+
+Rule 3:
+    	triKurtosis <= -1.7245
+	->  class triangle  [70.7%]
+
+Rule 4:
+    	circKurtosis > 1.096
+	->  class triangle  [54.6%]
+
+Rule 5:
+    	robustCHSkew <= 0.3533
+	->  class triangle  [50.0%]
+
+Rule 6:
+    	supSd <= 0.027773
+    	supSkew <= 0.31584
+    	supKurtosis > -1.8429
+	->  class superellipse  [70.7%]
+
+Rule 7:
+    	supKurtosis <= -1.8429
+	->  class superellipse  [51.2%]
+
+Rule 8:
+    	supMean <= 0.033121
+    	robustCHMean > 0.017946
+	->  class rectangle  [89.1%]
+
+Rule 9:
+    	rectMean <= 0.03785
+	->  class rectangle  [83.3%]
+
+Rule 10:
+    	rectKurtosis <= -1.3966
+    	supKurtosis > -1.8429
+	->  class rectangle  [70.0%]
+
+Rule 11:
+    	supSkew <= -0.66603
+	->  class rectangle  [45.3%]
+
+Rule 12:
+    	circMean > 0.05733
+    	circKurtosis <= 1.096
+    	rectMean > 0.03785
+    	rectKurtosis > -1.3966
+    	triSd > 0.032827
+    	triKurtosis > -1.7245
+    	supMean > 0.033121
+    	supSkew > 0.083263
+    	robustCHSkew > 0.3533
+    	robustCHSkew <= 1.8777
+	->  class robustconvexhull  [93.3%]
+
+Default class: robustconvexhull
+

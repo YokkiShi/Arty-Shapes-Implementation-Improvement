@@ -1,0 +1,8 @@
+#!/bin/csh -f
+
+# convex hull
+
+foreach f (*.pix)
+    #convex $f {$f:r}.hull
+    convex2 $f {$f:r}.hull
+end

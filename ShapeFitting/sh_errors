@@ -1,0 +1,16 @@
+#!/bin/csh -f
+
+# generate error functions from shapes and fitted models
+
+rm -f properties.txt
+rm -f names.txt
+
+foreach i (*.pix)
+    #echo $i ======== >> properties.txt
+    echo $i >> names.txt
+    foreach j (circ rect tri sup robustCH)
+        #echo {$i:r}.$j $i 
+        dt_pixel_stats {$i:r}.$j $i >> properties.txt
+    end
+    echo " " >> properties.txt
+end

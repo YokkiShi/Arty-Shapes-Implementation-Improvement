@@ -1,0 +1,99 @@
+
+C4.5 [release 5] rule generator	Wed Oct 13 20:50:57 2010
+-------------------------------
+
+    Options:
+	File stem <train>
+
+Read 111 cases (20 attributes) from train
+
+------------------
+Processing tree 0
+
+Final rules from tree 0:
+
+Rule 16:
+    	rectSd > 0.034035
+    	rectSd <= 0.055565
+    	triSd <= 0.056186
+    	triSkew > 0.34539
+    	supSd > 0.038941
+    	supSkew > -0.092613
+	->  class robustconvexhull  [89.9%]
+
+Rule 23:
+    	circKurtosis > -1.2107
+    	circKurtosis <= 0.42022
+    	rectMean > 0.062364
+    	triSd > 0.056186
+    	robustCHMean > 0.014406
+	->  class robustconvexhull  [87.1%]
+
+Rule 1:
+    	circMean <= 0.067014
+    	supMean <= 0.044061
+	->  class circle  [79.4%]
+
+Rule 7:
+    	rectKurtosis <= -1.3966
+	->  class rectangle  [75.8%]
+
+Rule 4:
+    	circMean > 0.067014
+    	supMean <= 0.03406
+    	supSkew > 0.49489
+	->  class rectangle  [73.1%]
+
+Rule 2:
+    	circMean <= 0.067014
+    	supMean > 0.044061
+	->  class rectangle  [70.7%]
+
+Rule 5:
+    	circMean > 0.067014
+    	supSkew <= -0.092613
+	->  class rectangle  [70.7%]
+
+Rule 6:
+    	rectSd <= 0.034035
+    	supMean > 0.03406
+	->  class rectangle  [63.0%]
+
+Rule 18:
+    	circMean > 0.067014
+    	circMean <= 0.15332
+    	rectMean > 0.063651
+    	rectSd > 0.055565
+    	triMean > 0.025993
+    	triSd <= 0.056186
+    	supSkew > -0.092613
+	->  class triangle  [81.5%]
+
+Default class: robustconvexhull
+
+
+Evaluation on training data (111 items):
+
+Rule  Size  Error  Used  Wrong	          Advantage
+----  ----  -----  ----  -----	          ---------
+  16     6  10.1%    13      0 (0.0%)	     0 (0|0) 	robustconvexhull
+  23     5  12.9%    10      0 (0.0%)	     0 (0|0) 	robustconvexhull
+   1     2  20.6%     6      0 (0.0%)	     6 (6|0) 	circle
+   7     1  24.2%     5      0 (0.0%)	     2 (2|0) 	rectangle
+   4     3  26.9%     8      1 (12.5%)	     7 (7|0) 	rectangle
+   2     2  29.3%     2      0 (0.0%)	     2 (2|0) 	rectangle
+   5     2  29.3%     4      0 (0.0%)	     4 (4|0) 	rectangle
+   6     2  37.0%     3      0 (0.0%)	     3 (3|0) 	rectangle
+  18     7  18.5%    20      2 (10.0%)	    16 (18|2) 	triangle
+
+Tested 111, errors 29 (26.1%)   <<
+
+
+	  (a)  (b)  (c)  (d)  (e)	<-classified as
+	 ---- ---- ---- ---- ----
+	   21         4          	(a): class rectangle
+	        18    9          	(b): class triangle
+	         2   37          	(c): class robustconvexhull
+	              2    6     	(d): class circle
+	    1        11          	(e): class superellipse
+

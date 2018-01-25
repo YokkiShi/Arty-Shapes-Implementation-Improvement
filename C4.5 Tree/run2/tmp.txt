@@ -1,0 +1,72 @@
+
+C4.5 [release 5] rule generator	Wed Oct 13 22:22:33 2010
+-------------------------------
+
+    Options:
+	File stem <train>
+
+Read 67 cases (20 attributes) from train
+
+------------------
+Processing tree 0
+
+Final rules from tree 0:
+
+Rule 1:
+    	circMean <= 0.039062
+	->  class circle  [50.0%]
+
+Rule 2:
+    	circMean > 0.039062
+    	supMean <= 0.03406
+	->  class rectangle  [73.1%]
+
+Rule 12:
+    	rectMean <= 0.040433
+    	robustCHKurtosis > 4.1791
+	->  class rectangle  [63.0%]
+
+Rule 3:
+    	triSd <= 0.032661
+	->  class triangle  [63.0%]
+
+Rule 11:
+    	robustCHSkew > 1.873
+    	robustCHKurtosis <= 4.1791
+	->  class triangle  [54.6%]
+
+Rule 10:
+    	circMean > 0.039062
+    	rectSkew > 0.3182
+    	triSd > 0.032661
+    	triKurtosis > -0.88388
+    	supMean > 0.03406
+    	supSkew > 0.11257
+    	robustCHSkew <= 1.873
+	->  class robustconvexhull  [90.9%]
+
+Default class: superellipse
+
+
+Evaluation on training data (67 items):
+
+Rule  Size  Error  Used  Wrong	          Advantage
+----  ----  -----  ----  -----	          ---------
+   1     1  50.0%     2      0 (0.0%)	     2 (2|0) 	circle
+   2     2  26.9%     9      1 (11.1%)	     7 (8|1) 	rectangle
+  12     2  37.0%     3      0 (0.0%)	     3 (3|0) 	rectangle
+   3     1  37.0%     3      0 (0.0%)	     3 (3|0) 	triangle
+  11     2  45.4%     5      1 (20.0%)	     3 (4|1) 	triangle
+  10     7   9.1%    28      1 (3.6%)	    26 (27|1) 	robustconvexhull
+
+Tested 67, errors 13 (19.4%)   <<
+
+
+	  (a)  (b)  (c)  (d)  (e)	<-classified as
+	 ---- ---- ---- ---- ----
+	   11                   2	(a): class rectangle
+	         7              3	(b): class triangle
+	             27         5	(c): class robustconvexhull
+	                   2     	(d): class circle
+	    1    1    1         7	(e): class superellipse
+
